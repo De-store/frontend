@@ -25,7 +25,7 @@ export class Developers extends Component<Props, State> {
                             </Col>
                         </Row>
                     </Col>
-                    <Col md={12} lg={4} className="d-flex justify_content_center align-items-center">
+                    <Col md={12} lg={4} className="d-flex justify_content_center align-items-center p_10">
                         <Row>
                             <Col>
                                 <Button size="lg" className="fs_15 font-weight-700" variant="primary" onClick={() => this.props.publishApp()} >Publish your app</Button>

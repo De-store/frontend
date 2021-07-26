@@ -51,3 +51,6 @@ export const LOCAL_STORAGE_PRIVATE_KEY = 'privateKey'
 
 export const PORTIS_WALLET = "PORTIS_WALLET"
 export const METAMASK_WALLET = "METAMASK_WALLET"
+
+// public images export
+export const HOME_IMAGE = '/assets/logo.gif'

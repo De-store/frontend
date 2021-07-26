@@ -4,10 +4,10 @@ import { connect, ConnectedProps } from 'react-redux'
 import { Container } from 'react-bootstrap'
 import { PublishPage } from '../../constants/Routes'
 // import { emptyContract } from '../../constants/EmptyInterfaces'
+import {HOME_IMAGE} from '../../constants/constants'
 import Developers from './Developers'
 import Users from './Users'
 
-import logo from '../../logo.svg';
 import { createIpfsUrl } from '../../utils/IpfsUrl'
 
 const mapStateToProps = (state: any) => ({
@@ -56,7 +56,7 @@ export class Home extends Component<Props, State> {
         return (
             <Container className="py_40">
                 <h1>DeStore</h1>
-                <img src={logo} className="App-logo" alt="logo" />
+                <img src={HOME_IMAGE} className="App-logo" alt="logo" />
                 <hr className="line-style" id="developers"/>
                 <Developers publishApp={() => this.gotoPage(PublishPage)} />
                 <hr className="line-style" id="users"/>

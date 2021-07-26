@@ -27,7 +27,7 @@ export class Users extends Component<Props, State> {
                             </Col>
                         </Row>
                     </Col>
-                    <Col md={12} lg={4} className="d-flex justify_content_center align-items-center flex-column">
+                    <Col md={12} lg={4} className="d-flex justify_content_center align-items-center flex-column p_10">
                         <Row className="p_5 text-center w_100">
                             <Col className="p_5" xs={12} sm={4} md={4} lg={12}>
                                 <Button size="lg" className="w_100 download_button_size fs_15 font-weight-700" variant="primary" onClick={() => this.props.downloadApp()}>

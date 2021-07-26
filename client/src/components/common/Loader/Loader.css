@@ -1,0 +1,16 @@
+.spinner_full_page {
+    position: absolute;
+    width: 100% !important;
+    height: 100%;
+    background: #ffffff75;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner_color{
+    color: #282c34;
+}

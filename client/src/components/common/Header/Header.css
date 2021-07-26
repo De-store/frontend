@@ -1,0 +1,29 @@
+.bg_header_gradient {
+  --background: linear-gradient(rgb(116, 116, 154), white) !important;
+  background-image: linear-gradient(rgb(116, 116, 154), white) !important
+}
+.header_icon_size_32 {
+  width: 32px;
+  height: 32px;
+}
+
+.badge_number {
+  top: 5px;
+  left: 5px;
+  font-size: 8px;
+}
+
+.p_absolute{
+  position: absolute;
+}
+
+.p_relative{
+  position: relative;
+}
+.dropdown-menu {
+  right: 0 !important;
+  left: auto !important;
+}
+.dropdown-toggle::after {
+  display: none !important;
+  }

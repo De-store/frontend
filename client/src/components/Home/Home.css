@@ -1,0 +1,40 @@
+@media screen and (min-width: 992px) {
+    .publish_button_size {
+        height: 120px;
+        width: 120px;
+    }
+    .download_button_size {
+        width: 120px;
+        text-align: left !important;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .download_button_size {
+        text-align: center !important;
+    }
+    .condition_justify_content_center {
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 991px) {
+    .android-text {
+        margin-top: 7px;
+    }
+    .extra-line {
+        display: flex !important;
+        visibility: inherit !important;
+        color: transparent;
+        margin-top: -7px;
+    }
+}
+
+.extra-line {
+    display: none;
+    visibility: hidden;
+}
+
+.download_button_size {
+    max-width: 200px
+}

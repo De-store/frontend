@@ -1,0 +1,31 @@
+@media screen and (max-width: 400px) {
+    .apk_icon {
+        width: 60%  !important;
+    }   
+}
+@media screen and (min-width: 401px) {
+    .apk_icon {
+        width: 40%  !important;
+    }   
+}
+
+@media screen and (max-width: 319px) {
+    .apk-text-319{
+        display: none;
+        visibility: hidden;
+    }
+}
+
+.icon_image {
+    width: 100%;
+    height: auto;
+}
+
+.apk_button {
+    color: #A4C639;
+    background: #a4c63957;
+}
+
+.carousel-item-size {
+    height: 200px
+}

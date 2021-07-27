@@ -28,7 +28,7 @@ export class Users extends Component<Props, State> {
             })
             console.log("RESPONSE ", response)
             if (response.status !== 200)
-                throw "Network error, try again later"
+                throw new Error("Network error, try again later")
             const blob: any = await response.blob()
             console.log("blob ", blob)
 

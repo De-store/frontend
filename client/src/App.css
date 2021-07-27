@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   /* background-color: #282c34; */
-  background-image: linear-gradient(to bottom right,#282c34 50%, #8FAAFE, #61DAFB);
+  background-image: linear-gradient(to bottom right, #282c34 50%, #8FAAFE, #61DAFB);
 }
 
 .App-logo {
@@ -15,6 +15,13 @@
   }
 }
 
+.noScroll {
+  overflow: hidden
+}
+.noClick {
+  pointer-events: none
+}
+
 .Home-header, .page-component {
   min-height: calc(100vh - 56px);
   display: flex;
@@ -24,7 +31,6 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
 
 .App-link {
   color: #61dafb;
@@ -47,6 +53,7 @@
 .width_100 {
   width: 100%;
 }
+
 .width_90 {
   width: 90%;
 }
@@ -54,7 +61,6 @@
 .pointer_events_none {
   pointer-events: none;
 }
-
 
 .error_text {
   color: #cc0033;
@@ -77,11 +83,11 @@
 }
 
 .align-item-center {
-  align-items: center;
+  align-items: center !important;
 }
 
 .justify_content_center {
-  justify-content: center;
+  justify-content: center !important;
 }
 
 .justify_content_between {
@@ -216,10 +222,12 @@
   font-size: 24px;
   line-height: 18px;
 }
+
 .f24_l30 {
   font-size: 24px;
   line-height: 30px;
 }
+
 .f18_l21 {
   font-size: 18px !important;
   line-height: 21px;
@@ -265,9 +273,11 @@
 .font-weight-500 {
   font-weight: 500 !important;
 }
+
 .font-weight-400 {
   font-weight: 400 !important;
 }
+
 .font-weight-300 {
   font-weight: 300 !important;
 }
@@ -1460,4 +1470,47 @@
 .line-style {
   background-color: white;
   color: white;
+}
+
+.display_none {
+  display: none !important;
+}
+
+/* custom-scrollbar */
+
+
+/* Dropdown scrollbar */
+
+.custom-scrollbar {
+  overflow: auto;
+}
+.custom-scrollbar {
+  overflow: auto;
+  scrollbar-width: thin !important; 
+  scrollbar-color: white white !important;
+}
+.custom-scrollbar:hover {
+  overflow: auto;
+  scrollbar-width: thin !important;
+  scrollbar-color: darkgray white !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px !important;
+  background: white !important;
+}
+.custom-scrollbar:hover::-webkit-scrollbar {
+  width: 5px !important;
+  background: darkgray !important;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: white !important;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888 !important;
+  border-radius: 5px !important;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555 !important;
+  width: 5px !important;
 }

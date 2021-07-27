@@ -2,6 +2,7 @@
   --background: linear-gradient(rgb(116, 116, 154), white) !important;
   background-image: linear-gradient(rgb(116, 116, 154), white) !important
 }
+
 .header_icon_size_32 {
   width: 32px;
   height: 32px;
@@ -13,17 +14,26 @@
   font-size: 8px;
 }
 
-.p_absolute{
+.p_absolute {
   position: absolute;
 }
 
-.p_relative{
+.p_relative {
   position: relative;
 }
+
 .dropdown-menu {
   right: 0 !important;
   left: auto !important;
 }
+
 .dropdown-toggle::after {
   display: none !important;
-  }
+}
+
+.header-no-wallet-select {
+  width: 30px;
+  height: 30px;
+  background: #282c34;
+  border-radius: 50%;
+}

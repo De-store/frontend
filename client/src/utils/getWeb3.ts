@@ -1,6 +1,6 @@
 import Web3 from "web3";
 import Portis from '@portis/web3';
-import { METAMASK_WALLET, PORTIS_WALLET } from "../constants/constants";
+import { METAMASK_WALLET, PORTIS_WALLET, PORTIS_DAPP_NETWORK, PORTIS_APP_ID } from "../constants/constants";
 
 const getWeb3 = (wallet: string) =>
   new Promise(async (resolve, reject) => {
@@ -15,8 +15,8 @@ const getWeb3 = (wallet: string) =>
 
       if (wallet === PORTIS_WALLET) {
 
-        const appId: any = process.env.REACT_APP_PORTIS_APP_ID
-        const appNetwork: any = process.env.REACT_APP_DAPP_NETWORK
+        const appId: any = PORTIS_APP_ID
+        const appNetwork: any = PORTIS_DAPP_NETWORK
 
         const portis = new Portis(appId, appNetwork);
         const web3 = new Web3(portis.provider);
@@ -57,6 +57,7 @@ const getWeb3 = (wallet: string) =>
         // });
       }
     } catch (err) {
+      console.log("ERR ", err)
       resolve(null);
     }
   });

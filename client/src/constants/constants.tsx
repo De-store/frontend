@@ -11,7 +11,7 @@ export const REACT_APP_BASE_API_URL = process.env.REACT_APP_BASE_API_URL
 export const REACT_APP_ENABLE_MAP = process.env.REACT_APP_ENABLE_MAP
 
 export const IMAGE_PATH_PREFIX =
-  ENVIRONMENT === "development" ||  REACT_APP_PLATFORM !== "web" ? "/assets/" : "/build/assets/";
+  ENVIRONMENT === "development" || REACT_APP_PLATFORM !== "web" ? "/assets/" : "/build/assets/";
 
 
 //PATHS  
@@ -37,3 +37,15 @@ export const METAMASK_WALLET = "METAMASK_WALLET"
 
 // public images export
 export const HOME_IMAGE = '/assets/logo.gif'
+export const METAMASK_WALLET_IMAGE = '/assets/images/metamask.png'
+export const PORTIS_WALLET_IMAGE = '/assets/images/portis.png'
+
+// 
+export const PORTIS_DAPP_NETWORK = process.env.REACT_APP_PORTIS_NETWORK
+export const PORTIS_APP_ID = process.env.REACT_APP_PORTIS_APP_ID
+
+// 
+export const LOCAL_STORAGE_WALLET = "DE-STORE-WALLET"
+
+// WALLET SELECT ERROR
+export const OPEN_WALLET_SELECT_MODAL = "OPEN_WALLET_SELECT_MODAL"

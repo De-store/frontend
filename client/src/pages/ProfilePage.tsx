@@ -1,8 +1,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Profile from '../components/Profile/Profile'
+import { emptyContract } from '../constants/EmptyInterfaces';
+import { setContract } from '../modules/actions/SetContract';
 
 export class ProfilePage extends Component<any, any> {
+
+    componentDidMount() {
+        const { contract, setNewContract } = this.props;
+        if (contract.contract === emptyContract && !contract.loading)
+            setNewContract()
+    }
 
     callApi = (action: any, payload: any) => {
         if (payload != null) this.props.sendAction(action, payload);
@@ -15,7 +23,7 @@ export class ProfilePage extends Component<any, any> {
 
     render() {
         return (
-            <div className="ProfilePage">
+            <div className="ProfilePage custom-scrollbar">
                 <div className="page-component">
                     <Profile callApi={this.callApi} pushToHistory={this.pushToHistory} />
                 </div>
@@ -24,10 +32,13 @@ export class ProfilePage extends Component<any, any> {
     }
 }
 
-const mapStateToProps = (state: any) => ({})
+const mapStateToProps = (state: any) => ({
+    contract: state.contract
+})
 
 const mapDispatchToProps = (dispatch: Function) => ({
-    sendAction: (action: Function, payload?: any) => dispatch(payload ? action(payload) : action())
+    sendAction: (action: Function, payload?: any) => dispatch(payload ? action(payload) : action()),
+    setNewContract: () => dispatch(setContract())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfilePage)

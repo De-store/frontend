@@ -64,5 +64,6 @@ export interface LocalStorage {
 
 export interface Contract {
     web3: any
-    instance: any
+    instance: any,
+    accounts: []
 }

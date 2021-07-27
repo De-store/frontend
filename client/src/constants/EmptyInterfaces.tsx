@@ -18,5 +18,6 @@ export const emptyPublishAppData: PublishAppData = {
 
 export const emptyContract: Contract = {
     web3: {},
-    instance: {}
+    instance: {},
+    accounts: []
 }

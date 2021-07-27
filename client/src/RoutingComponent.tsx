@@ -3,24 +3,32 @@ import { connect } from 'react-redux'
 import { Route, Switch, withRouter } from 'react-router-dom';
 import './App.css'
 import { Header } from './components/common/Header/Header';
-// import WalletSelect from './components/common/WalletSelect/WalletSelect';
+import WalletSelect from './components/common/WalletSelect/WalletSelect';
 import * as ROUTES from './constants/Routes';
 import HomePage from './pages/HomePage'
 import ProfilePage from './pages/ProfilePage';
 import PublishPage from './pages/PublishPage';
 
-import { completeSelectWallet } from '../src/modules/actions/WalletSelect'
+import { METAMASK_WALLET, OPEN_WALLET_SELECT_MODAL, PORTIS_WALLET } from './constants/constants';
+import { closePopup, logoutWallet, setContract } from './modules/actions/SetContract';
+import { getLocalStorage } from './utils/localStorage';
+import { emptyContract } from './constants/EmptyInterfaces';
+import { FullScreenLoader } from './components/common/Loader/Loader';
 
 class RoutingComponent extends Component<any, any> {
     state = {
         isOnline: true,
+        wallet: ''
     }
 
     networkListener: any
     unreadMessageFetchedFlag = false
 
     componentDidMount() {
-        console.log("WALLET ", this.props.wallet)
+        const _storage = getLocalStorage()
+        this.setState({
+            wallet: _storage.wallet
+        })
     }
 
     componentWillUnmount() {
@@ -28,35 +36,63 @@ class RoutingComponent extends Component<any, any> {
         this.unreadMessageFetchedFlag = false
     }
 
-    componentDidUpdate(prevProps: any, prevState: any) { }
+    componentDidUpdate(prevProps: any, prevState: any) {
+        const _storage = getLocalStorage()
+        if (prevState.wallet !== _storage.wallet)
+            this.setState({
+                wallet: _storage.wallet
+            })
+    }
 
     walletUpdate = (wallet: string = "") => {
-        console.log("WAALET ", wallet)
-        this.props.chooseWallet(wallet)
+        this.props.chooseWalletSetContract(wallet)
+    }
+
+    closeWalletSelect = () => {
+        const { contract } = this.props
+        this.props.closeWalletSelect()
+        const _storage = getLocalStorage()
+        if ((
+            (_storage && _storage.wallet === PORTIS_WALLET) ||
+            (_storage && _storage.wallet === METAMASK_WALLET)) &&
+            contract.contract !== emptyContract) { }
+        else {
+            this.props.history.push('/')
+        }
+    }
+    logoutWallet = () => {
+        this.props.logoutWallet()
+        this.props.history.push('/')
     }
 
     render() {
-        // const { wallet } = this.props
+        const { contract } = this.props
+        const { wallet } = this.state
         return (
-            <div className="App">
-                <Header />
-                {/* <WalletSelect show={wallet.selectingWallet} chooseWallet={this.walletUpdate}/> */}
-                <Switch >
-                    <Route exact path={ROUTES.HomePage} component={HomePage} />
-                    <Route exact path={ROUTES.PublishPage} component={PublishPage} />
-                    <Route exact path={ROUTES.ProfilePage} component={ProfilePage} />
-                </Switch>
-            </div>
+            <>
+                {contract && contract.loading && <FullScreenLoader />}
+                <div className={`App custom-scrollbar ${contract && contract.loading ? 'noScroll noClick' : ''}`}>
+                    <Header wallet={wallet} />
+                    <WalletSelect show={contract.error === OPEN_WALLET_SELECT_MODAL ? true : false} chooseWallet={this.walletUpdate} closeWalletSelect={this.closeWalletSelect} logoutWallet={this.logoutWallet} />
+                    <Switch >
+                        <Route exact path={ROUTES.HomePage} component={HomePage} />
+                        <Route exact path={ROUTES.PublishPage} component={PublishPage} />
+                        <Route exact path={ROUTES.ProfilePage} component={ProfilePage} />
+                    </Switch>
+                </div>
+            </>
         )
     }
 }
 
 const mapDispatchToProps = (dispatch: Function) => ({
-    chooseWallet: (wallet: string) => dispatch(completeSelectWallet(wallet))
+    chooseWalletSetContract: (wallet: string) => dispatch(setContract(wallet)),
+    closeWalletSelect: () => dispatch(closePopup()),
+    logoutWallet: () => dispatch(logoutWallet())
 })
 
 const mapStateToProps = (state: any) => ({
-    wallet: state.wallet
+    contract: state.contract
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(RoutingComponent))

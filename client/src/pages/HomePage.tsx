@@ -15,7 +15,7 @@ export class HomePage extends Component<any, any> {
 
     render() {
         return (
-            <div className="HomePage">
+            <div className="HomePage custom-scrollbar">
                 <header className="Home-header">
                     <Home callApi={this.callApi} pushToHistory={this.pushToHistory} />
                 </header>

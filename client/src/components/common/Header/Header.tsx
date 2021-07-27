@@ -28,8 +28,10 @@ export const Header: React.FC<P> = (props) => {
     <Tooltip id="button-tooltip" {...props} className="p_10">
       <Container>
         <Row>
-          <Col className="fs_20 font-weight-700 p_20 m_10" >
-            {contract.contract.accounts}
+          <Col >
+            <div className="fs_20 font-weight-700 m_10">
+              {contract.contract.accounts}
+            </div>
           </Col>
         </Row>
         <Row>

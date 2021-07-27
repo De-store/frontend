@@ -1,5 +1,5 @@
 .spinner_full_page {
-    position: absolute;
+    position: fixed;
     width: 100% !important;
     height: 100%;
     background: #ffffff75;

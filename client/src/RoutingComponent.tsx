@@ -27,7 +27,7 @@ class RoutingComponent extends Component<any, any> {
     componentDidMount() {
         const _storage = getLocalStorage()
         this.setState({
-            wallet: _storage.wallet
+            wallet: _storage && _storage.wallet ? _storage.wallet : ''
         })
     }
 
@@ -38,10 +38,11 @@ class RoutingComponent extends Component<any, any> {
 
     componentDidUpdate(prevProps: any, prevState: any) {
         const _storage = getLocalStorage()
-        if (prevState.wallet !== _storage.wallet)
-            this.setState({
-                wallet: _storage.wallet
-            })
+        if (_storage && _storage.wallet)
+            if (prevState.wallet !== _storage.wallet)
+                this.setState({
+                    wallet: _storage && _storage.wallet ? _storage.wallet : ''
+                })
     }
 
     walletUpdate = (wallet: string = "") => {

@@ -42,12 +42,18 @@ export class WalletSelect extends Component<Props, State> {
 
                 </Modal.Body>
                 <Modal.Footer className="w_100 justify_content_center">
-                <Button variant="primary" className="w_25 fs_15 font-weight-700 p_5 my_5" onClick={() => { closeWalletSelect() }}>
-                < IonIcon name="close-outline" />&nbsp;Close
-                    </Button>
-                <Button variant="primary" className="w_25 fs_15 font-weight-700 p_5 my_5" onClick={() => { logoutWallet() }}>
-                < IonIcon name="log-out-outline" />&nbsp;Logout
-                </Button>
+                    <Row className="w_100 custom_width">
+                        <Col>
+                            <Button variant="primary" className="w_100 fs_15 font-weight-700 p_5 my_5" onClick={() => { closeWalletSelect() }}>
+                                < IonIcon name="close-outline" />&nbsp;Close
+                                </Button>
+                        </Col>
+                        <Col>
+                            <Button variant="primary" className="w_100 fs_15 font-weight-700 p_5 my_5" onClick={() => { logoutWallet() }}>
+                                < IonIcon name="log-out-outline" />&nbsp;Logout
+                                </Button>
+                        </Col>
+                    </Row>
                 </Modal.Footer>
             </Modal>
         )

@@ -53,6 +53,7 @@ export const Header: React.FC<P> = (props) => {
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/#developers">Developers</Nav.Link>
           <Nav.Link href="/#users">Users</Nav.Link>
+          <Nav.Link href="/publish">Publish</Nav.Link>
           <Nav.Link href="/profile">Your Apps</Nav.Link>
           <Nav.Link className="d-flex justify_content_center">
             {

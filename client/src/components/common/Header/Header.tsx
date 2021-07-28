@@ -1,15 +1,18 @@
 import React from "react";
 import { Container, Row, Col, Nav, Navbar, Button, OverlayTrigger, Tooltip } from "react-bootstrap";
 
-
 import { PORTIS_WALLET, METAMASK_WALLET, METAMASK_WALLET_IMAGE, PORTIS_WALLET_IMAGE } from '../../../constants/constants'
 
 import "./Header.css"
 import { useDispatch, useSelector } from "react-redux";
 import { selectWallet } from "../../../modules/actions/SetContract";
+import { ProfilePage } from "../../../constants/Routes";
+
+import { History } from 'history';
 
 interface P {
-  wallet: string
+  wallet: string,
+  history: History
 }
 
 export const Header: React.FC<P> = (props) => {
@@ -53,8 +56,7 @@ export const Header: React.FC<P> = (props) => {
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/#developers">Developers</Nav.Link>
           <Nav.Link href="/#users">Users</Nav.Link>
-          <Nav.Link href="/publish">Publish</Nav.Link>
-          <Nav.Link href="/profile">Your Apps</Nav.Link>
+          <Nav.Link onClick={() => props.history.push(ProfilePage)}>Your Apps</Nav.Link>
           <Nav.Link className="d-flex justify_content_center">
             {
               !wallet || wallet === "" ?

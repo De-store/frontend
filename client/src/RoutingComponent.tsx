@@ -73,7 +73,7 @@ class RoutingComponent extends Component<any, any> {
             <>
                 {contract && contract.loading && <FullScreenLoader />}
                 <div className={`App custom-scrollbar ${contract && contract.loading ? 'noScroll noClick' : ''}`}>
-                    <Header wallet={wallet} />
+                    <Header wallet={wallet} history={this.props.history}/>
                     <WalletSelect show={contract.error === OPEN_WALLET_SELECT_MODAL ? true : false} chooseWallet={this.walletUpdate} closeWalletSelect={this.closeWalletSelect} logoutWallet={this.logoutWallet} />
                     <Switch >
                         <Route exact path={ROUTES.HomePage} component={HomePage} />

@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import { Dispatch } from 'redux'
 import { connect, ConnectedProps } from 'react-redux'
 import { Container } from 'react-bootstrap'
-import { ProfilePage, PublishPage } from '../../constants/Routes'
-// import { emptyContract } from '../../constants/EmptyInterfaces'
+import { PublishPage } from '../../constants/Routes'
 import {HOME_IMAGE} from '../../constants/constants'
 import Developers from './Developers'
 import Users from './Users'
@@ -58,7 +57,7 @@ export class Home extends Component<Props, State> {
                 <h1>DeStore</h1>
                 <img src={HOME_IMAGE} className="App-logo" alt="logo" />
                 <hr className="line-style" id="developers"/>
-                <Developers publishApp={() => this.gotoPage(PublishPage)} viewApp={() => this.gotoPage(ProfilePage)} />
+                <Developers publishApp={() => this.gotoPage(PublishPage)} />
                 <hr className="line-style" id="users"/>
                 <Users downloadApp={() => this.downloadApk(createIpfsUrl(app))} />
                 <hr className="line-style"/>

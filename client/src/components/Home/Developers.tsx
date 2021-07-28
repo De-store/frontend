@@ -5,8 +5,7 @@ import "./Home.css"
 
 interface State { }
 interface Props {
-    publishApp: Function,
-    viewApp: Function
+    publishApp: Function
 }
 
 export class Developers extends Component<Props, State> {
@@ -30,11 +29,6 @@ export class Developers extends Component<Props, State> {
                         <Row>
                             <Col>
                                 <Button size="lg" className="fs_15 font-weight-700" variant="primary" onClick={() => this.props.publishApp()} >Publish your app</Button>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                                <Button size="lg" className="fs_15 font-weight-700" variant="primary" onClick={() => this.props.viewApp()} >Your apps</Button>
                             </Col>
                         </Row>
                     </Col>

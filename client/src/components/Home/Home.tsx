@@ -56,16 +56,33 @@ export class Home extends Component<Props, State> {
         try {
             // const app: any = process.env.REACT_APP_DE_STORE_APP_IPFS ? process.env.REACT_APP_DE_STORE_APP_IPFS : ""
 
-            const response: any = await fetch('https://gateway.ipfs.io/ipns/QmYDK8VDTYZYHmww3wBZBiSyGAPdzpxNKEfozmL4SiriMe', {
-                method: 'GET'
+            // const response: any = await fetch('https://gateway.ipfs.io/ipns/QmYDK8VDTYZYHmww3wBZBiSyGAPdzpxNKEfozmL4SiriMe', {
+            //     method: 'GET'
+            // })
+
+            const response: any = await fetch("https://slate.host/api/v1/get", {
+                method: "GET",
+                headers: {
+                    Authorization: `Basic ${process.env.REACT_APP_SLATE_API}`,
+                },
             })
-            console.log("RESPONSE ", response)
+            console.log("RESPONSE ", response);
+            if (response.status !== 200)
+                throw new Error("Network error, try again later")
+            const json: any = await response.json()
+
+            let data: any = json.slates[0].data.objects[0]
+
+            const apkResponse: any = await fetch(`${data.url}`, {
+                method: "GET",
+                headers: {
+                    'Content-Type': 'application/vnd.android.package-archive',
+                },
+            })
             if (response.status !== 200)
                 throw new Error("Network error, try again later")
 
-            const blob: any = await response.blob()
-            console.log("blob ", blob)
-
+            const blob: any = await apkResponse.blob()
             const url: any = window.URL.createObjectURL(
                 new Blob([blob]),
             );
@@ -88,6 +105,7 @@ export class Home extends Component<Props, State> {
                 loading: false
             })
         } catch (err: any) {
+            console.log("ERR ", err)
             alert("Network error, try again later")
             this.setState({
                 loading: false

@@ -24,4 +24,6 @@ yarn-error.log*
 
 .vercel
 
+/src/utils/ListOfIPFSUrl.ts
+
 package-lock.json

@@ -4,9 +4,7 @@
 
 ## About
 
-This repository is the truffle project for DeStore website.
-Destore only has one smart contract which store the app details and it's owner to maintain the ownership and to keep a record of all the applications.
-The smart contract is deployed on `Matic-mumbai network`.
+This repository is the truffle project for DeStore website.<br>Destore only has one smart contract which store the app details and it's owner to maintain the ownership and to keep a record of all the applications.<br>The smart contract is deployed on `Matic-mumbai network`.
 
 The website is a `react application` that is deployed on **IPFS** using **Fleek** to manage CI/CD pipeline and env variables.
 
@@ -15,15 +13,11 @@ The dApp currently supports **Metamask** and **Portis** wallets and is mobile fr
 ## Other Modules
 
 ### Query
-The query to fetch data from blockchain is managed using **The Graph**. 
-[This](https://github.com/De-store/graph-backend) is the repository that contains the graph project. 
-`https://github.com/De-store/graph-backend`
+The query to fetch data from blockchain is managed using **The Graph**.<br>[This](https://github.com/De-store/graph-backend) is the repository that contains the graph project.<br>`https://github.com/De-store/graph-backend`
 
 ### Mobile app
 
-DeStore also has a mobile application which will help users to view all the listed apps and install them on their devices.
-[This](https://github.com/De-store/mobile-app) is the repository that contains the mobile app codebase.
-`https://github.com/De-store/mobile-app`
+DeStore also has a mobile application which will help users to view all the listed apps and install them on their devices.<br>[This](https://github.com/De-store/mobile-app) is the repository that contains the mobile app codebase.<br>`https://github.com/De-store/mobile-app`
 
 ## Useful links
 

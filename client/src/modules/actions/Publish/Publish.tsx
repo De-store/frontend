@@ -30,17 +30,17 @@ export function publishApp(data: PublishAppData) {
             /**
              * publish on IPFS
              */
-            
+
             // const appIdObject = {
             //     name: data.name,
             //     tagLine: data.tagLine,
             //     description: data.description,
             //     icon: appIcon
             // }
-            
+
             // const appIdResult = await addToIPFS(JSON.stringify(appIdObject))
             // const appId = appIdResult.cid.toString()
-            
+
             const appIconResult = await addToIPFS(data.icon)
             const appIcon = appIconResult.cid.toString()
             const apkResult = await addToIPFS(data.apk)
@@ -51,8 +51,8 @@ export function publishApp(data: PublishAppData) {
             const transactionHash = await publishApplication(data.name, data.tagLine, data.description, appIcon, apkFile, "", [images], state)
 
             //Dispatch success
-            dispatch(publishSuccess({transactionHash}))
-        } catch (err) {
+            dispatch(publishSuccess({ transactionHash }))
+        } catch (err: any) {
             console.log("ERR ", err, err.message, err.data)
             //Dispatch failure
             dispatch(publishFail(err.message))

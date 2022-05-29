@@ -8,7 +8,7 @@ export const addToIPFS = async (data: any) => {
     try {
         const IPFS = await ipfs.add(data)
         return IPFS
-    } catch (err) {
+    } catch (err: any) {
         throw err
     }
 }
@@ -17,7 +17,7 @@ export const fetchFromIPFS = async (path: string) => {
     try {
         const response = await axios.get(`https://gateway.ipfs.io/ipfs/${path}`)
         return response.data
-    } catch (err) {
+    } catch (err: any) {
         throw err
     }
 }

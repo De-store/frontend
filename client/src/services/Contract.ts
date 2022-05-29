@@ -11,7 +11,7 @@ export const publishApplication = async (name: string, tagline: string, descript
         let addApplicationResult = await contract.instance.methods.addApplication(name, tagline, description, icon, apkFile, iosFile, images).send({ from: currAccount.toString() });
 
         return addApplicationResult.transactionHash.toString()
-    } catch (err) {
+    } catch (err: any) {
         throw err
     }
 
@@ -54,7 +54,7 @@ export const publishApplication = async (name: string, tagline: string, descript
 //             listOfApps.push(appData)
 //         }
 //         return listOfApps
-//     } catch (err) {
+//     } catch (err: any) {
 //         throw err
 //     }
 
@@ -120,7 +120,7 @@ export const graphQuery = async (reduxState: any): Promise<Array<PublishAppData>
         return listOfApps
 
 
-    } catch (err) {
+    } catch (err: any) {
         console.log("ERR ", err)
         throw err
     }

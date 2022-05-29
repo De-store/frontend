@@ -56,7 +56,7 @@ const getWeb3 = (wallet: string) =>
         }
         // });
       }
-    } catch (err) {
+    } catch (err: any) {
       console.log("ERR ", err)
       resolve(null);
     }

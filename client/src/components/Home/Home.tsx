@@ -71,6 +71,10 @@ export class Home extends Component<Props, State> {
                 throw new Error("Network error  while fetching data, try again later")
             const json: any = await response.json()
 
+            console.log("json ", json)
+            console.log("json.collections ", json.collections)
+            console.log("json.collections[1].objects ", json.collections[1].objects)
+
             let data: any = json.collections[1].objects[0]
 
             const apkResponse: any =

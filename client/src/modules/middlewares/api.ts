@@ -23,7 +23,7 @@ const api: Middleware = ({ getState, dispatch }) => next => async action => {
       if (onSuccess) dispatch({ type: onSuccess, payload: response.data })
       // General
       dispatch(actions.apiCallSuccess(response.data))
-   } catch (error) {
+   } catch (error: any) {
       // Specific
       if (onError) dispatch({ type: onError, payload: error.message })
       // General

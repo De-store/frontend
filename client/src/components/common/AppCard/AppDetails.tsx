@@ -38,8 +38,8 @@ export class AppDetails extends Component<Props, State> {
         let imageApiData: any = images
         let apkApiData: any = apk
         console.log("apkApiData ", apkApiData)
-        const iconImg: string = iconApiData.hash ? createIpfsUrl(iconApiData.hash) : URL.createObjectURL(icon)
-        const imageImg: string = imageApiData.hash ? createIpfsUrl(imageApiData.hash) : URL.createObjectURL(images)
+        const iconImg: string = iconApiData.hash ? createIpfsUrl(iconApiData.hash) : URL.createObjectURL(iconApiData)
+        const imageImg: string = imageApiData.hash ? createIpfsUrl(imageApiData.hash) : URL.createObjectURL(imageApiData)
         return (
             <Container>
                 <Row>

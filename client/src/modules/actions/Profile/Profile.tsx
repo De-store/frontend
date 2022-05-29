@@ -18,7 +18,7 @@ export function getFileData() {
             const applications = await graphQuery(state)
             dispatch(getFileDataSuccess(applications))
 
-        } catch (err) {
+        } catch (err: any) {
             console.log("ERR ", err, err.message, err.data)
             dispatch(getFileDataFailure(err.message))
 

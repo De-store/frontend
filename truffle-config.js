@@ -30,6 +30,17 @@ module.exports = {
       timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
       skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     },
+    evmos_testnet: {
+      provider: () => new HDWalletProvider({
+        mnemonic: MNEMONIC,
+        providerOrUrl: `https://eth.bd.evmos.dev:8545`
+      }),
+      network_id: 9000,       // Evmos testnet's id
+      gas: 5500000,        // Evmos testnet has a lower block limit than mainnet
+      confirmations: 2,    // # of confs to wait between deployments. (default: 0)
+      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+      skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+    }
   },
 
 

@@ -62,9 +62,21 @@ export const publishApplication = async (name: string, tagline: string, descript
 
 export const graphQuery = async (reduxState: any): Promise<Array<PublishAppData>> => {
 
-    const APIURL = "https://api.thegraph.com/subgraphs/name/surajsingla333/de-store-graph";
+    // const APIURL = "https://api.thegraph.com/subgraphs/name/surajsingla333/de-store-graph";
+    // const APIURL = "http://localhost:8000/subgraphs/name/destore/backend"
+    let APIURL;
+
     const { contract } = reduxState.contract
     let currAccount = await contract.web3.eth.getAccounts();
+
+    console.log({ contract })
+    console.log(contract.instance._address)
+
+    if (contract.instance._address === "0x5a18b5D8703D4bBf53365582F50f031965fa1Deb") {
+        APIURL = "https://7f9f-103-16-30-190.ngrok.io/subgraphs/name/destore/backend"
+    } else if (contract.instance._address === "0x3447eFaA7A0a95B44c794214b38D017FdD97A8f8") {
+        APIURL = "https://api.thegraph.com/subgraphs/name/surajsingla333/de-store-graph";
+    }
 
     console.log("currAccount.toString() ", currAccount.toString(), currAccount, currAccount[0])
 

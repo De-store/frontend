@@ -4,11 +4,14 @@
 
 ## About
 
-This repository is the truffle project for the DeStore website.<br>Destore only has one smart contract which stores the app details and its owner to maintain the ownership and to keep a record of all the applications.<br>The smart contract is deployed on the `matic-mumbai network`.
+This repository is the truffle project for the DeStore website.<br>Destore only has one smart contract which stores the app details and its owner to maintain the ownership and to keep a record of all the applications.<br>The smart contract is deployed on the following networks:
+
+1. `matic-mumbai network` with contract address `0x3447eFaA7A0a95B44c794214b38D017FdD97A8f8` .
+2. `evmos test network` with contract address `0x5a18b5D8703D4bBf53365582F50f031965fa1Deb` .
 
 The website is a `react application` that is deployed on **IPFS** using **Fleek** to manage CI/CD pipeline and env variables.
 
-The dApp currently supports **Metamask** and **Portis** wallets and is mobile friendly.
+The dApp currently supports **Metamask** (for both matic-mumbai and evmos test network) and **Portis** (only matic-mumbai network) wallets and is mobile friendly.
 
 ## Other Modules
 
@@ -23,6 +26,8 @@ DeStore also has a mobile application that will help users to view all the liste
 ## Useful links
 
 - **Live site**: https://sparkling-disk-9446.on.fleek.co/
-- **Smart contract**: https://mumbai.polygonscan.com/address/0x3447eFaA7A0a95B44c794214b38D017FdD97A8f8
+- **Smart contract (matic-mumbai)**: https://mumbai.polygonscan.com/address/0x3447eFaA7A0a95B44c794214b38D017FdD97A8f8
+- **Smart contract (evmos-testnet)**: https://evm.evmos.dev/address/0x5a18b5D8703D4bBf53365582F50f031965fa1Deb/transactions
 - **Mobile application build**: https://slate.host/_/data?cid=bafybeidowfkijlzebcpb7okajqy2zoapckpehogvuundeglelwd4alvxai
-- **The Graph**: https://thegraph.com/legacy-explorer/subgraph/surajsingla333/de-store-graph
+- **The Graph (matic-mumbai)**: https://thegraph.com/legacy-explorer/subgraph/surajsingla333/de-store-graph
+- **The Graph (evmos testnet)**: https://7f9f-103-16-30-190.ngrok.io/subgraphs/name/destore/backend/graphql

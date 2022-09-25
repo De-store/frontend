@@ -73,7 +73,7 @@ export const graphQuery = async (reduxState: any): Promise<Array<PublishAppData>
     console.log(contract.instance._address)
 
     if (contract.instance._address === "0x5a18b5D8703D4bBf53365582F50f031965fa1Deb") {
-        APIURL = "https://e13d-103-69-24-35.ngrok.io/subgraphs/name/destore/backend"
+        APIURL = `${process.env.REACT_APP_EVMOS_GRAPH_NODE}subgraphs/name/destore/backend`
     } else if (contract.instance._address === "0x3447eFaA7A0a95B44c794214b38D017FdD97A8f8") {
         APIURL = "https://api.thegraph.com/subgraphs/name/surajsingla333/de-store-graph";
     }

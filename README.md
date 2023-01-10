@@ -31,3 +31,26 @@ DeStore also has a mobile application that will help users to view all the liste
 - **Mobile application build**: https://slate.host/_/data?cid=bafybeidowfkijlzebcpb7okajqy2zoapckpehogvuundeglelwd4alvxai
 - **The Graph (matic-mumbai)**: https://thegraph.com/legacy-explorer/subgraph/surajsingla333/de-store-graph
 - **The Graph (evmos testnet)**: https://26e8-103-69-24-112.ngrok.io/subgraphs/name/destore/backend/graphql
+
+
+### Contributions
+
+All PR should be linked to an issue and should be pointed to `dev_qa` branch.
+
+#### How to contribute?
+
+Those who wants to contribute, they need to add the details in `contributions.md` following the below template.
+
+1. Contributors need to write a heading saying about what the contribution is about (can be same as the PR title) | contributor's name - discord Id.
+
+2. Write description of the contribution (can be same as description of the PR). # Make sure to add issue Id and PR ID in the description here.
+
+
+Example:
+ 
+##### 1. Home page header UI | Suraj Singla - surajsingla333#5243
+Update the home page header with the updated designs.
+Issue: #1
+PR: #2
+
+

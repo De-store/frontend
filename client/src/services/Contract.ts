@@ -74,6 +74,8 @@ export const graphQuery = async (reduxState: any): Promise<Array<PublishAppData>
 
     if (contract.instance._address === "0x5a18b5D8703D4bBf53365582F50f031965fa1Deb") {
         APIURL = `${process.env.REACT_APP_EVMOS_GRAPH_NODE}subgraphs/name/destore/backend`
+    } else if (contract.instance._address === "0x45F44aa52B051bc67C612685bA1dDb41C507ac9a") {
+        APIURL = `${process.env.REACT_APP_5IRE_TESTNET_GRAPH_NODE}subgraphs/name/destore/backend`
     } else if (contract.instance._address === "0x3447eFaA7A0a95B44c794214b38D017FdD97A8f8") {
         APIURL = "https://api.thegraph.com/subgraphs/name/surajsingla333/de-store-graph";
     }
